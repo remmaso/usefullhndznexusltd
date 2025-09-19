@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usefullhandznexusltd</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h2>Usefullhandznexusltd</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#properties">Properties</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="login.html" class="btn-login">Login</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Carousel -->
+    <section id="home" class="hero">
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide active">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=1200&h=600&fit=crop" alt="Luxury Villa">
+                    <div class="carousel-content">
+                        <h1>Luxury Villa in Ogunfayo</h1>
+                        <p>Experience unparalleled luxury in this stunning 5-bedroom villa</p>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=1200&h=600&fit=crop" alt="Modern Apartment">
+                    <div class="carousel-content">
+                        <h1>Modern Downtown Apartment</h1>
+                        <p>Contemporary living with breathtaking city views</p>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=1200&h=600&fit=crop" alt="Family Home">
+                    <div class="carousel-content">
+                        <h1>Beautiful Family Home</h1>
+                        <p>Perfect family home in a quiet, safe neighborhood</p>
+                        <button class="btn-primary">View Details</button>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-btn next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="carousel-dots">
+                <span class="dot active" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <h2>Find Your Dream Home</h2>
+            <div class="search-form">
+                <input type="text" placeholder="Location, City, or ZIP Code" id="search-location">
+                <select id="property-type">
+                    <option value="">Property Type</option>
+                    <option value="house">House</option>
+                    <option value="apartment">Apartment</option>
+                    <option value="condo">Cottage</option>
+                    <option value="land">Land</option>
+                </select>
+                <select id="price-range">
+                    <option value="">Price Range</option>
+                    <option value="0-500000">NGN0 - NGN500000</option>
+                    <option value="500000-1000000">NGN5000,000 - NGN50M</option>
+                    <option value="1000000-2000000">NGN100M - NGN500M</option>
+                    <option value="2000000+">NGN250M+</option>
+                </select>
+                <button class="btn-search" onclick="searchProperties()">Search Properties</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Properties -->
+    <section id="properties" class="properties-section">
+        <div class="container">
+            <h2>Featured Properties</h2>
+            <div class="properties-grid">
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&h=300&fit=crop" alt="Luxury Villa">
+                    <div class="property-info">
+                        <h3>Modern Villa</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i>Awoyaya, Ibeju</p>
+                        <p class="price">NGN2,500,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 5 Beds</span>
+                            <span><i class="fas fa-bath"></i> 4 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 3,500 sq ft</span>
+                        </div>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&h=300&fit=crop" alt="Downtown Apartment">
+                    <div class="property-info">
+                        <h3>Downtown Apartment</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Golf Estate, Ibeju</p>
+                        <p class="price">NGN850,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 2 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 1,200 sq ft</span>
+                        </div>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1449844908441-8829872d2607?w=400&h=300&fit=crop" alt="Family Home">
+                    <div class="property-info">
+                        <h3>Family Home</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Lagasa, Ibeju</p>
+                        <p class="price">NGN450,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 4 Beds</span>
+                            <span><i class="fas fa-bath"></i> 3 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,800 sq ft</span>
+                        </div>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+
+                <div class="property-card">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?w=400&h=300&fit=crop" alt="Beach House">
+                    <div class="property-info">
+                        <h3>Beach House</h3>
+                        <p class="location"><i class="fas fa-map-marker-alt"></i> Ogunfayo, Lagos</p>
+                        <p class="price">NGN1,200,000</p>
+                        <div class="property-features">
+                            <span><i class="fas fa-bed"></i> 3 Beds</span>
+                            <span><i class="fas fa-bath"></i> 2 Baths</span>
+                            <span><i class="fas fa-ruler-combined"></i> 2,100 sq ft</span>
+                        </div>
+                        <button class="btn-view">View Details</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About Usefullhandznexusltd</h2>
+                    <p>With over decades experience in luxury real estate, we have established itself as the premier destination for discerning buyers and sellers. Our commitment to excellence, integrity, and personalized service sets us apart in the competitive real estate market.</p>
+                    <p>We specialize in luxury properties across major metropolitan areas, offering unparalleled market knowledge and a vast network of connections. Whether you're looking for your dream home or seeking to sell a prestigious property, our team of expert agents is here to guide you through every step of the process.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <h3>500+</h3>
+                            <p>Properties Sold</p>
+                        </div>
+                        <div class="stat">
+                            <h3>NGN1B+</h3>
+                            <p>Total Sales Volume</p>
+                        </div>
+                        <div class="stat">
+                            <h3>98%</h3>
+                            <p>Client Satisfaction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=400&fit=crop" alt="About Us">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>What Our Clients Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p>"Usefullhandznexusltd found us the perfect home in just two weeks. Their attention to detail and market knowledge is exceptional."</p>
+                    <h4>Emmason</h4>
+                    <p class="role">Home Buyer</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"Working with Usefullhandznexusltd was the best decision we made. They handled everything professionally and got us top dollar for our property."</p>
+                    <h4>Ayomide</h4>
+                    <p class="role">Property Seller</p>
+                </div>
+                <div class="testimonial-card">
+                    <p>"The team at Usefullhandznexusltd goes above and beyond. They made the entire buying process smooth and stress-free."</p>
+                    <h4>Musa</h4>
+                    <p class="role">First-time Buyer</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> Suit 61, Eputu Mall, Eputu B/Stop, Ibej Lekki Lagos</p>
+                    <p><i class="fas fa-phone"></i> (234) 701-020-154</p>
+                    <p><i class="fas fa-envelope"></i> info@Usefullhandznexusltd.com</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" required>
+                    <input type="email" placeholder="Your Email" required>
+                    <input type="tel" placeholder="Your Phone">
+                    <textarea placeholder="Your Message" rows="4" required></textarea>
+                    <button type="submit" class="btn-primary">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- WhatsApp Chat -->
+    <div class="whatsapp-chat">
+        <a href="https://wa.me/15551234567" target="_blank" class="whatsapp-btn">
+            <i class="fab fa-whatsapp"></i>
+            <span>Chat on WhatsApp</span>
+        </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Usefullhandznexusltd</h3>
+                    <p>Your trusted partner in luxury real estate. Finding dream homes since decades.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#properties">Properties</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Buy Property</a></li>
+                        <li><a href="#">Sell Property</a></li>
+                        <li><a href="#">Property Management</a></li>
+                        <li><a href="#">Investment Consulting</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe to get the latest property listings</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Usefullhandznexusltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

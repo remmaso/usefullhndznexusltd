@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Elite Properties</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+
+        .auth-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        .auth-box h2 {
+            color: #2c3e50;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn-auth {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-2px);
+        }
+
+        .auth-links {
+            margin-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+        }
+
+        .auth-links a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .auth-links a:hover {
+            color: #2980b9;
+        }
+
+        .auth-logo {
+            margin-bottom: 1rem;
+            color: #3498db;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .remember-me input[type="checkbox"] {
+            width: auto;
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .social-login p {
+            margin-bottom: 1rem;
+            color: #666;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+
+        .social-btn {
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            background: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .social-btn:hover {
+            background: #f8f9fa;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-logo">Usefullhandznexusltd</div>
+            <h2>Welcome Back</h2>
+            <p style="color: #666; margin-bottom: 2rem;">Sign in to your account</p>
+            
+            <form class="auth-form" id="loginForm">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="passwordError">Password is required</div>
+                </div>
+                
+                <div class="remember-me">
+                    <input type="checkbox" id="remember" name="remember">
+                    <label for="remember">Remember me</label>
+                </div>
+                
+                <button type="submit" class="btn-auth">Sign In</button>
+            </form>
+            
+            <div class="auth-links">
+                <a href="register.html">Create Account</a>
+                <a href="#">Forgot Password?</a>
+            </div>
+            
+            <div class="social-login">
+                <p>Or sign in with</p>
+                <div class="social-buttons">
+                    <button class="social-btn" onclick="socialLogin('google')">
+                        <i class="fab fa-google" style="color: #DB4437;"></i>
+                    </button>
+                    <button class="social-btn" onclick="socialLogin('facebook')">
+                        <i class="fab fa-facebook-f" style="color: #4267B2;"></i>
+                    </button>
+                    <button class="social-btn" onclick="socialLogin('apple')">
+                        <i class="fab fa-apple" style="color: #000;"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                <a href="index.html" style="color: #666; text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Login Form Handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const remember = document.getElementById('remember').checked;
+            
+            // Basic validation
+            let isValid = true;
+            
+            if (!email || !isValidEmail(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+            
+            if (!password || password.length < 6) {
+                document.getElementById('passwordError').style.display = 'block';
+                document.getElementById('passwordError').textContent = 'Password must be at least 6 characters';
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+            
+            if (isValid) {
+                // In a real application, this would send data to a server
+                console.log('Login attempt:', { email, password, remember });
+                
+                // Simulate login success
+                alert('Login successful! Redirecting to dashboard...');
+                
+                // Store login state (in real app, use secure tokens)
+                localStorage.setItem('isLoggedIn', 'true');
+                localStorage.setItem('userEmail', email);
+                
+                // Redirect to home or dashboard
+                window.location.href = 'index.html';
+            }
+        });
+
+        // Email validation
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Social login
+        function socialLogin(provider) {
+            console.log(`Attempting ${provider} login...`);
+            alert(`${provider} login would redirect to ${provider}'s authentication page`);
+        }
+
+        // Check if already logged in
+        window.addEventListener('load', () => {
+            if (localStorage.getItem('isLoggedIn') === 'true') {
+                console.log('User is already logged in');
+                // Optionally redirect to dashboard
+                // window.location.href = 'dashboard.html';
+            }
+        });
+
+        // Password visibility toggle
+        const passwordInput = document.getElementById('password');
+        const togglePassword = document.createElement('span');
+        togglePassword.innerHTML = '<i class="fas fa-eye"></i>';
+        togglePassword.style.cssText = `
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #666;
+        `;
+        
+        // Add password toggle functionality
+        const passwordGroup = document.querySelector('#password').parentElement;
+        passwordGroup.style.position = 'relative';
+        passwordGroup.appendChild(togglePassword);
+        
+        togglePassword.addEventListener('click', () => {
+            const type = passwordInput.type === 'password' ? 'text' : 'password';
+            passwordInput.type = type;
+            togglePassword.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+        });
+    </script>
+</body>
+</html>

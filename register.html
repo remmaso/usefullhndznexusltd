@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Usefullhandznexusltd</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .auth-container {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 2rem;
+        }
+
+        .auth-box {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .auth-box h2 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 2rem;
+        }
+
+        .auth-subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .form-group {
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #555;
+            font-weight: 500;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .btn-auth {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            padding: 1rem;
+            font-size: 1.1rem;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .btn-auth:hover {
+            transform: translateY(-2px);
+        }
+
+        .terms {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        .terms a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .auth-links {
+            margin-top: 2rem;
+            color: #666;
+        }
+
+        .auth-links a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        .auth-logo {
+            margin-bottom: 1rem;
+            color: #3498db;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 0.9rem;
+            margin-top: 0.5rem;
+            display: none;
+        }
+
+        .password-requirements {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin: 0.2rem 0;
+        }
+
+        .requirement.valid {
+            color: #27ae60;
+        }
+
+        .requirement.invalid {
+            color: #e74c3c;
+        }
+    </style>
+<script src="https://sites.super.myninja.ai/_assets/ninja-daytona-script.js"></script>
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="auth-logo">Usefullhandznexusltd</div>
+            <h2>Create Your Account</h2>
+            <p class="auth-subtitle">Join thousands of satisfied property buyers and sellers</p>
+            
+            <form class="auth-form" id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">First Name</label>
+                        <input type="text" id="firstName" name="firstName" required>
+                        <div class="error-message" id="firstNameError">First name is required</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName">Last Name</label>
+                        <input type="text" id="lastName" name="lastName" required>
+                        <div class="error-message" id="lastNameError">Last name is required</div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required>
+                    <div class="error-message" id="emailError">Please enter a valid email</div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" required>
+                    <div class="error-message" id="phoneError">Please enter a valid phone number</div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="userType">I am a</label>
+                        <select id="userType" name="userType" required>
+                            <option value="">Select type</option>
+                            <option value="buyer">Buyer</option>
+                            <option value="seller">Seller</option>
+                            <option value="investor">Investor</option>
+                            <option value="agent">Real Estate Agent</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="location">Preferred Location</label>
+                        <input type="text" id="location" name="location" placeholder="City, State">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required>
+                    <div class="error-message" id="passwordError">Password does not meet requirements</div>
+                    <div class="password-requirements">
+                        <div class="requirement" id="lengthReq">
+                            <i class="fas fa-times"></i> At least 8 characters
+                        </div>
+                        <div class="requirement" id="uppercaseReq">
+                            <i class="fas fa-times"></i> One uppercase letter
+                        </div>
+                        <div class="requirement" id="lowercaseReq">
+                            <i class="fas fa-times"></i> One lowercase letter
+                        </div>
+                        <div class="requirement" id="numberReq">
+                            <i class="fas fa-times"></i> One number
+                        </div>
+                        <div class="requirement" id="specialReq">
+                            <i class="fas fa-times"></i> One special character
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                    <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                </div>
+                
+                <div class="terms">
+                    <input type="checkbox" id="agreeTerms" required>
+                    <label for="agreeTerms">
+                        I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                    </label>
+                </div>
+                
+                <button type="submit" class="btn-auth">Create Account</button>
+            </form>
+            
+            <div class="auth-links">
+                <p>Already have an account? <a href="login.html">Sign In</a></p>
+            </div>
+            
+            <div style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #eee;">
+                <a href="index.html" style="color: #666; text-decoration: none;">
+                    <i class="fas fa-arrow-left"></i> Back to Home
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password validation
+        const passwordInput = document.getElementById('password');
+        const confirmPasswordInput = document.getElementById('confirmPassword');
+        
+        const requirements = {
+            length: /.{8,}/,
+            uppercase: /[A-Z]/,
+            lowercase: /[a-z]/,
+            number: /[0-9]/,
+            special: /[!@#$%^&*(),.?":{}|<>]/
+        };
+        
+        function validatePassword() {
+            const password = passwordInput.value;
+            
+            Object.keys(requirements).forEach(req => {
+                const element = document.getElementById(req + 'Req');
+                if (requirements[req].test(password)) {
+                    element.className = 'requirement valid';
+                    element.querySelector('i').className = 'fas fa-check';
+                } else {
+                    element.className = 'requirement invalid';
+                    element.querySelector('i').className = 'fas fa-times';
+                }
+            });
+        }
+        
+        passwordInput.addEventListener('input', validatePassword);
+        
+        // Registration Form Handling
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validation
+            let isValid = true;
+            
+            // Name validation
+            if (!data.firstName.trim()) {
+                document.getElementById('firstNameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('firstNameError').style.display = 'none';
+            }
+            
+            if (!data.lastName.trim()) {
+                document.getElementById('lastNameError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('lastNameError').style.display = 'none';
+            }
+            
+            // Email validation
+            if (!isValidEmail(data.email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+            }
+            
+            // Phone validation
+            if (!isValidPhone(data.phone)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+            
+            // Password validation
+            if (!validatePasswordStrength(data.password)) {
+                document.getElementById('passwordError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('passwordError').style.display = 'none';
+            }
+            
+            // Password match validation
+            if (data.password !== data.confirmPassword) {
+                document.getElementById('confirmPasswordError').style.display = 'block';
+                isValid = false;
+            } else {
+                document.getElementById('confirmPasswordError').style.display = 'none';
+            }
+            
+            if (isValid) {
+                // In a real application, this would send data to a server
+                console.log('Registration data:', data);
+                
+                // Simulate registration success
+                alert('Registration successful! Please check your email to verify your account.');
+                
+                // Store registration data (in real app, use secure API)
+                localStorage.setItem('registeredEmail', data.email);
+                localStorage.setItem('registeredName', `${data.firstName} ${data.lastName}`);
+                
+                // Redirect to login
+                window.location.href = 'login.html';
+            }
+        });
+        
+        // Validation functions
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+        
+        function isValidPhone(phone) {
+            const phoneRegex = /^[\d\s\-\+\(\)]+$/;
+            return phoneRegex.test(phone) && phone.replace(/\D/g, '').length >= 10;
+        }
+        
+        function validatePasswordStrength(password) {
+            return Object.values(requirements).every(req => req.test(password));
+        }
+        
+        // Add password visibility toggle
+        [passwordInput, confirmPasswordInput].forEach(input => {
+            const toggleBtn = document.createElement('span');
+            toggleBtn.innerHTML = '<i class="fas fa-eye"></i>';
+            toggleBtn.style.cssText = `
+                position: absolute;
+                right: 10px;
+                top: 50%;
+                transform: translateY(-50%);
+                cursor: pointer;
+                color: #666;
+            `;
+            
+            const formGroup = input.parentElement;
+            formGroup.style.position = 'relative';
+            formGroup.appendChild(toggleBtn);
+            
+            toggleBtn.addEventListener('click', () => {
+                const type = input.type === 'password' ? 'text' : 'password';
+                input.type = type;
+                toggleBtn.innerHTML = type === 'password' ? '<i class="fas fa-eye"></i>' : '<i class="fas fa-eye-slash"></i>';
+            });
+        });
+        
+        // Phone number formatting
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 6) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3, 6)}-${value.slice(6, 10)}`;
+            } else if (value.length >= 3) {
+                value = `(${value.slice(0, 3)}) ${value.slice(3)}`;
+            }
+            e.target.value = value;
+        });
+        
+        // Check if user is already registered
+        window.addEventListener('load', () => {
+            const registeredEmail = localStorage.getItem('registeredEmail');
+            if (registeredEmail) {
+                console.log('User has registered previously with:', registeredEmail);
+            }
+        });
+    </script>
+</body>
+</html>
